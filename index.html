@@ -3,13 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <title>AI Billedgalleri</title>
-<link rel="stylesheet" href="style.css">
+<style>
+    body { font-family: sans-serif; padding: 20px; }
+    #filters { margin-bottom: 20px; }
+    #gallery { display: flex; flex-wrap: wrap; gap: 10px; }
+    .item img { width: 200px; height: auto; border-radius: 5px; }
+</style>
 </head>
 <body>
 <h1>AI Billedgalleri</h1>
-
 <div id="filters"></div>
-<div id="gallery" class="gallery"></div>
+<div id="gallery"></div>
 
 <script src="gallery.js"></script>
 </body>

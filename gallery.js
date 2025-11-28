@@ -1,5 +1,6 @@
 async function loadGallery() {
-    const res = await fetch('/admin/save.php?action=list'); // JSON med alle billeder
+    // Hent alle billeder fra Node API
+    const res = await fetch('/api/images');
     const data = await res.json();
 
     const categories = {};
@@ -20,6 +21,7 @@ async function loadGallery() {
     for (const [cat, vals] of Object.entries(categories)) {
         const sel = document.createElement('select');
         sel.dataset.category = cat;
+
         const optAll = document.createElement('option');
         optAll.value = '';
         optAll.textContent = `Alle ${cat}`;
@@ -54,9 +56,10 @@ function showImages(data, filters) {
     filtered.forEach(img => {
         const div = document.createElement('div');
         div.className = 'item';
-        div.innerHTML = `<img src="/gallery/uploads/${img.filename}" alt="">`;
+        div.innerHTML = `<img src="/backend/uploads/${img.filename}" alt="">`;
         gallery.appendChild(div);
     });
 }
 
+// Load galleri på start
 loadGallery();

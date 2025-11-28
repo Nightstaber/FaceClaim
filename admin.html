@@ -3,20 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <title>Admin - AI Billedgalleri</title>
-<link rel="stylesheet" href="../gallery/style.css">
+<style>
+    body { font-family: sans-serif; padding: 20px; }
+    input, select { margin: 5px 0; display: block; }
+    img { vertical-align: middle; border-radius: 5px; }
+    button { margin-left: 5px; }
+</style>
 </head>
 <body>
 <h1>Admin Panel</h1>
 
 <form id="uploadForm">
+    <label>Billede:</label>
     <input type="file" name="image" required>
-    <input type="text" name="Køn" placeholder="Køn">
-    <input type="text" name="Alder" placeholder="Alder">
-    <input type="text" name="Hårfarve" placeholder="Hårfarve">
-    <input type="text" name="Kendetegn" placeholder="Kendetegn">
-    <button type="submit">Upload billede</button>
+
+    <label>Køn:</label>
+    <select name="Køn">
+        <option value="">Vælg...</option>
+        <option value="Mand">Mand</option>
+        <option value="Kvinde">Kvinde</option>
+        <option value="Andet">Andet</option>
+    </select>
+
+    <label>Aldersgruppe:</label>
+    <select name="Alder">
+        <option value="">Vælg...</option>
+        <option value="1950-1990">1950-1990</option>
+        <option value="1990-2010">1990-2010</option>
+        <option value="2010-2025">2010-2025</option>
+    </select>
+
+    <label>Hårfarve:</label>
+    <select name="Hårfarve">
+        <option value="">Vælg...</option>
+        <option value="Blond">Blond</option>
+        <option value="Brun">Brun</option>
+        <option value="Sort">Sort</option>
+        <option value="Rød">Rød</option>
+        <option value="Andet">Andet</option>
+    </select>
+
+    <label>Kendetegn:</label>
+    <input type="text" name="Kendetegn" placeholder="F.eks. briller, skæg">
+
+    <button type="submit">Upload</button>
 </form>
 
+<h2>Eksisterende billeder</h2>
 <div id="imageList"></div>
 
 <script src="admin.js"></script>
