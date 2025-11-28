@@ -1,0 +1,3 @@
+.gallery { display: flex; flex-wrap: wrap; gap: 10px; }
+.item img { width: 150px; height: 150px; object-fit: cover; }
+#filters { margin-bottom: 20px; }

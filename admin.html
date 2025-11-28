@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<title>Admin - AI Billedgalleri</title>
+<link rel="stylesheet" href="../gallery/style.css">
+</head>
+<body>
+<h1>Admin Panel</h1>
+
+<form id="uploadForm">
+    <input type="file" name="image" required>
+    <input type="text" name="Køn" placeholder="Køn">
+    <input type="text" name="Alder" placeholder="Alder">
+    <input type="text" name="Hårfarve" placeholder="Hårfarve">
+    <input type="text" name="Kendetegn" placeholder="Kendetegn">
+    <button type="submit">Upload billede</button>
+</form>
+
+<div id="imageList"></div>
+
+<script src="admin.js"></script>
+</body>
+</html>
