@@ -11,7 +11,8 @@ app.use(express.static(path.join(__dirname, '../frontend')));
 
 // Upload opsætning
 const storage = multer.diskStorage({
-    destination: function(req, file, cb){ cb(null, 'uploads/') },
+    destination: function(req, file, cb){ 
+        cb(null, path.join(__dirname, 'uploads')) 
     filename: function(req, file, cb){ cb(null, Date.now() + path.extname(file.originalname)) }
 });
 const upload = multer({ storage });
@@ -38,3 +39,4 @@ app.delete('/api/image/:id', async (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Server kører på port ${PORT}`));
+
