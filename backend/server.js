@@ -15,6 +15,7 @@ if (!fs.existsSync(uploadDir)){
 
 // Statisk frontend
 app.use(express.json());
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(express.static(path.join(__dirname, '../frontend')));
 
 // Multer upload
@@ -47,3 +48,4 @@ app.delete('/api/image/:id', async (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Server kører på port ${PORT}`));
+
